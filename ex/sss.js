@@ -60,7 +60,8 @@ function draw()//, landscape
     drawCrabMoveLeft(350, 550);
     drawCrabMoveRight(450, 550);
     drawCrabStand(590, 550);
-    
+    drawCrabJumpLeft(120, 350);
+    drawCrabJumpRight(80, 390);
     
 }
 
@@ -214,4 +215,54 @@ function drawCrabJump(x, y) {
     line(x - 20, y, x - 20, y + 10); // Левая нога
     line(x + 20, y, x + 20, y + 10); // Правая нога
     noStroke();
+}
+function drawCrabJumpLeft(x, y) {
+    fill(255, 0, 0); // Красный
+    ellipse(x, y, 60, 30); // Основное тело
+
+    // Клешни
+    fill(255, 0, 0);
+    ellipse(x - 40, y, 20, 10); // Левая клешня
+    ellipse(x + 30, y, 20, 10); // Правая клешня (сдвинута)
+
+    // Глаза
+    fill(255); // Белый
+    ellipse(x - 15, y - 10, 10, 10); // Левый глаз
+    ellipse(x + 15, y - 10, 10, 10); // Правый глаз
+
+    fill(0); // Черный
+    ellipse(x - 17, y - 10, 5, 5); // Зрачок левого глаза
+    ellipse(x + 13, y - 10, 5, 5); // Зрачок правого глаза
+
+    // Ноги
+    stroke(255, 0, 0);
+    strokeWeight(5);
+    line(x -10, y + 10, x - 5, y + 30); // Левая нога
+    line(x + 10, y + 10, x + 20, y + 30); // Правая нога
+    noStroke();
+}
+function drawCrabJumpRight(x, y) {
+    fill(255, 0, 0); // Красный
+    ellipse(x, y, 60, 30); // Основное тело
+
+    // Клешни
+    fill(255, 0, 0);
+    ellipse(x - 30, y, 20, 10); // Левая клешня (сдвинута)
+    ellipse(x + 40, y, 20, 10); // Правая клешня
+
+    // Глаза
+    fill(255); // Белый
+    ellipse(x - 15, y - 10, 10, 10); // Левый глаз
+    ellipse(x + 15, y - 10, 10, 10); // Правый глаз
+
+    fill(0); // Черный
+    ellipse(x - 13, y - 10, 5, 5); // Зрачок левого глаза
+    ellipse(x + 17, y - 10, 5, 5); // Зрачок правого глаза
+
+    // Ноги
+    stroke(255, 0, 0);
+    strokeWeight(5);
+    line(x - 12, y + 10, x - 20, y + 30); // Левая нога
+    line(x +10, y + 10, x , y + 30); // Правая нога
+    noStroke(); 
 }
